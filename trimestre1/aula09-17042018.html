@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aula 09 - Menus com CSS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style media="screen">
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  .topo{
+
+  }
+  .topo img{
+    width: 30%;
+    height: 30%;
+  }
+
+  .menu-horizontal ul{
+    list-style-type: none;
+    text-align: center;
+    background-color: #666666;
+    box-shadow: #666 0px 1px 5px;
+  }
+
+  .menu-horizontal ul li{
+    display: inline;
+  }
+
+  .menu-horizontal ul li a{
+    background-color: #666666;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 25px;
+    display: inline-block;
+  }
+
+  .menu-horizontal ul li a:hover{
+    background-color: #111111;
+  }
+
+  .centralizado{
+    text-align: center;
+  }
+
+  .meio {
+    background-color: #f2f2f2;
+  }
+
+  .menu-vertical{
+    float: right;
+    background-color: #f2f2f2;
+    width: 22%;
+  }
+
+  .menu-vertical ul {
+    width: 100%;
+    list-style-type: none;
+
+  }
+  .menu-vertical h4{
+    margin: 20px;
+  }
+
+  .menu-vertical ul li a{
+    color: #009000;
+    display: block;
+    text-decoration: none;
+    padding: 5px 5px 5px 20px;
+  }
+
+  .menu-vertical ul li a:hover{
+    background-color: #666;
+    color: #fff;
+  }
+
+  .conteudo{
+    background: #fff;
+    float: right;
+    width: 78%
+
+  }
+
+  .conteudo p{
+    padding: 20px;
+  }
+
+
+  .limpar-float{
+    clear: both;
+  }
+
+  .rodape{
+    background-color: #f2f2f2;
+  }
+
+  @media screen and (max-width: 800px) {
+    .lateral, .conteudo{
+      width: 100%;
+    }
+  }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="topo centralizado">
+    <img src="http://www.vectortemplates.com/raster/batman-logo.gif">
+  </div>
+
+  <div class="menu-horizontal">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-home" aria-hidden="true">  </i>
+          Home
+        </a>
+      </li>
+      <li> <a href="#">IFPR</a> </li>
+      <li> <a href="#">Tópicos Especiais</a> </li>
+      <li> <a href="#">Sobre</a> </li>
+      <li>
+        <a href="#"
+        ><i class="fa fa-envelope" aria-hidden="true">  </i>
+        contato
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="meio">
+
+  <div class="menu-vertical">
+    <ul>
+      <li>
+        <a href="#">
+          <i class="fa fa-home" aria-hidden="true">  </i>
+          Home
+        </a>
+      </li>
+      <li> <a href="#">IFPR</a> </li>
+      <li> <a href="#">Tópicos Especiais</a> </li>
+      <li> <a href="#">Sobre</a> </li>
+      <li>
+        <a href="#"
+        ><i class="fa fa-envelope" aria-hidden="true">  </i>
+        contato
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="conteudo">
+
+  <h1>Metalização</h1>
+
+  <h4>Invenção</h4>
+
+
+<p>  A Metalização foi inventada no final do século XIX, quando um engenheiro suíço – Dr. Max Ulrich Schoop de Zurique, ofereceu um canhão de brinquedo ao seu filho, e verificou que as balas de chumbo que este disparava ficavam firmemente aderidas às superfícies a que fazia alvo.[1] Após estas observações, o Dr. Schoop desenvolveu os primeiros processos para pulverizar o metal em forma de arame, que produziram um protótipo viável em 1912. As primeiras noticias sobre este novo método de revestimento foram publicadas na Revista Scientific American, no artigo Metal Plating with airbrush.[2] O Dr. Schoop patenteou este método nos Estados Unidos através da patente n.º 1 133 507 em 30 de Março de 1915.[3]
+
+  As primeiras aplicações comerciais do Processo Schoop tiveram lugar na Alemanha e mais tarde em França. Schoop vendeu os seus direitos a uma firma Alemã chamada “Metalizator”, que desenvolveu, fabricou e distribuiu a tecnologia pela Europa toda e mais tarde, em 1920 nos Estados Unidos.[1]
+  Evolução
+
+  O processo inicial consistia, e consiste, em usar a chama Oxi-Acetilénica para fundir o arame metálico (Zinco, Alumínio e Chumbo e as suas aplicações iniciais centraram-se em . Nos anos 20 do século XX, foi introduzida a metalização por pistola de arco. Em 1970, foi introduzida a Pistola de Plasma, que permite alcançar temperaturas de 15 000 K, o que permite a metalização de materiais refractários como cerâmicas e óxidos, etc.[1]
+
+  No final dos anos 70 foi introduzida uma variante da metalização por chama, conhecido pelo seu acrónimo Inglês de HVOF – High Velocity Oxy-Fuel , que consegue acelerar as partículas de metal fundido até velocidades supersónicas, o que permitiu também metalizar superfícies com carbonetos. Mais recentemente foi inventada uma variante do HVOF, denominada Metalização a Quente
+
+  Mais recentemente, foi inventada a metalização a frio, pois funciona à temperatura ambiente, as partículas, conjuntamente com um gás a 800 ˚C, são aceleradas até 1500 m/s, através de um bico Laval.[4] Ao atingirem a superfície a metalizar a esta velocidade as partículas foram uma união metalúrgica com a mesma.[5] Ao não sofrerem qualquer oxidação devido às altas temperaturas, este processo irá permitir colmatar as limitações dos outros métodos. http://www.csiro.au/solutions/ColdSpray.html Outro dos mais recentes desenvolvimentos foi a Metalização a Quente, que deriva do sistema HVOF, mas no qual a temperatura do gás de combustão é diminuída através da injecção de Azoto. Este sistema permite a metalização de superfícies com Titânio, sem haver lugar à sua oxidação e degradação que ocorre a elevadas temperaturas[6].
+
+
+  <h4>Métodos de Metalização</h4>
+
+  Um sistema típico consiste nos seguintes equipamentos:
+
+  Pistola de pulverização, também chamada ‘’’Tocha’’’, que é o dispositivo que vai realizar a fusão e aceleração das partículas fundidas a serem depositadas;
+  Alimentador, que fornece o material a ser fundido, o qual pode ser em forma de Pó, arame ou líquido;
+  Meios propulsores que são constituídos por gases que vão impelir as partículas fundidas até à superfície do substrato. O Meio mais usado é o Ar comprimido;
+  Meio de aquecimento que é o método usado para aquecer até à fusão o material a ser depositado, podem ser gases como o Acetileno e o Oxigénio ou o Arco eléctrico. Neste último caso o sistema necessita de uma fonte de alimentação.
+
+  <h4>Metalização por chama</h4>
+
+  É o processo que foi inicialmente inventado, e é ainda um dos mais utilizados. Consiste numa pistola que é alimentada pelos gases que vão provocar a chama, Acetileno e Oxigénio, pelo gás propulsor (Ar comprimido) e incorpora dois roletes que puxam o arame do material a depositar. E o alimentam ao bico, que ´o local onde se dá a sua fusão. Neste processo as velocidades das partículas atingem cerca de 150 m/s.
+  Metalização por Arco elétrico
+
+  Apesar de ter sido inventado ainda nos anos 10 do século XX, a Metalização por arco eléctrico, apenas ganhou importância comercial a partir dos anos 60 do século XX.
+
+  Este sistema caracteriza-se por uma pistola que é alimentada por dois arames de material a depositar, os quais são eletrizados por uma corrente direta quando as duas pontas de arame se aproximam uma da outra no bico da pistola, é criado um arco eletrico que funde o metal. Ao bico da pistola é alimentado também ar comprimido, que é o agente transportador das partículas de metal fundido até à superfície a revestir.[7]
+  Metalização por detonação
+
+  A metalização por detonação consiste num cano comprido e refrigerado por água, com válvulas de entrada para gases e Pó do material a depositar. Ao cano é alimentado uma mistura de Oxigénio e Acetileno e uma quantidade de material a depositar sob a forma de pó. Uma faísca é usada para inflamar a mistura gasosa. A detonação resultante aquece e acelera conjuntamente com o pó a uma velocidade supersónica através do cano até à superfície a depositar. Entre cada detonação, o cano é purgado com Azoto. O processo é repetido várias vezes por segundo a uma frequência de 3 a 6 Hz.[8]
+
+  A energia cinética das partículas de pó quente na altura do impacto (> 800 m/s) com o substrato, resultam num revestimento muito denso e resistente.
+  Metalização por Chama de Alta Velocidade – HVOF
+  Jacto de metalização por Chama de Alta Velocidade
+
+  Inventado pela Union Carbide, hoje Praxair em 1958, este método apenas se difundiu a partir dos anos 80. É um processo parecido com a Metalização por Detonação, mas que opera continuamente. Consiste em alimentar numa câmara de combustão, o material de revestimento e uma mistura gasosa ou líquida de combustível e Oxigénio onde é inflamada e queimada continuamente. O gás quente resultante a uma pressão de 1 MPa emana através de um cano onde atinge velocidades de 1800 m/s transportando as partículas até à superfície a revestir. Ao contrário da Metalização por detonação, este processo funciona em contínuo.[8]
+
+  Como combustível o HVOF pode usar vários tais como os gases Hidrogénio, Metano, Acetileno, etc e líquidos Querosene, etc.
+
+  O revestimento de metalização por HVOF, pode chegar a 12 mm de espessura e é usado para depositar materiais resistentes à abrasão, desgaste e corrosão em peças e componentes metálicos e cerâmicas. Os pós mais usados são Carboneto de tungsténio, Carboneto de crómio, Aço inoxidável, ligas de níquel, Alumínio, etc..
+  Metalização por Plasma
+  Processo de Metalização por Plasma
+
+  Neste processo, o material a ser depositado é geralmente sob a forma de pó e arame, é introduzido no jacto de plasma que emana da tocha de plasma. No jacto, onde a temperatura atinge 10 000 K, o material é fundido e propulsionado até ao substrato. Aí, as gotículas fundidas achatam-se, solidificam rapidamente e formam um depósito. A qualidade do revestimento é influenciado por bastantes parâmetros tais como: O Material a ser depositado, a composição do gás de plasma, a taxa de fluxo, a entrada de energia, a distância da pistola ao substrato, a temperatura do substrato, etc.[9]
+
+  Devido às altas temperaturas proporcionadas pelo plasma, este método permite a aplicação de matériais cerâmicos.
+</p>
+
+</div>
+
+<div class="limpar-float"></div>
+</div>
+<div class="rodape centralizado">
+  <p>Desenvolvido po Fabio Fernandes da Silva <br/>
+    IFPR - Campus Paranavaí
+  </p>
+</div>
+
+</body>
+</html>
