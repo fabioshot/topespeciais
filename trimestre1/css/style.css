@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.logo {
+  text-decoration: none;
+  font-size: 40px;
+  color: #555;
+  padding: 20px;
+}
+.dotcom {
+  text-decoration: none
+  font-size: 40px;
+  color: #808080;
+}
+.menu ul {
+  list-style-type: none;
+  background-color: #555;
+  box-shadow: #666666 0px 1px 5px;
+  text-align: right;
+}
+
+.menu ul li {
+  display: inline;
+}
+
+.menu ul li a {
+  background-color: #555;
+  color: #d3d3d3;
+  text-decoration: none;
+  padding: 10px 25px;
+  display: inline-block;
+}
+
+.menu-horizontal ul li a:hover {
+    background-color: #111111;
+}
