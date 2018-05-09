@@ -20,10 +20,12 @@
   background-color: #555;
   box-shadow: #666666 0px 1px 5px;
   text-align: right;
+
 }
 
 .menu ul li {
   display: inline;
+
 }
 
 .menu ul li a {
@@ -32,8 +34,41 @@
   text-decoration: none;
   padding: 10px 25px;
   display: inline-block;
+  font-size: 18px;
+
 }
 
-.menu-horizontal ul li a:hover {
-    background-color: #111111;
+.menu ul li a:hover {
+    background-color: #808080;
+}
+
+.conteudo {
+max-width: 1024px;
+margin: 0 auto;
+}
+
+.conteudo .noticia{
+  margin-top: 50px;
+  font-family: sans-serif;
+  color: #555;
+}
+
+.counteudo .noticia h1{
+
+}
+
+.counteudo .noticia h3{
+  color: #808080;
+}
+
+.counteudo .noticia h4{
+  color: #808080;
+}
+
+.counteudo .noticia img{
+
+}
+
+.counteudo .noticia p{
+
 }
