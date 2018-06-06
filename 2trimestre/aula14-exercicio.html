@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Aula02 - Formulários</title>
+  <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      var nome = $('input[name]="nome"').val();
+      if (nome == '') {
+        $('.validar_texto').text('* campo obrigatorio')
+      }
+
+      $('form').button();
+    });
+
+  </script>
+</head>
+<body>
+
+  <div class="">
+    <h3>Formulários</h3>
+
+    <form class="" action="" method="post">
+
+      <label for="">Nome:</label><br>
+      <input type="text" name="nome" value="">
+      <span class="validar_texto"></span>
+      <br>
+
+      <label for="">Sexo:</label><br>
+      <input type="radio" name="sexo" value="masculino" id="radioMasc">
+      <label for="radioMasc">Masculino</label>
+
+      <input type="radio" name="sexo" value="feminino" id="radioFem">
+      <label for="radioFem">Feminino</label>
+      <span class="validar"></span>
+      <br><br>
+
+      <label for="">Interesses:</label><br>
+      <input type="checkbox" name="interesse[]" value="esporte" id="chEsp">
+      <label for="chEsp">Esporte</label>
+      <span class="validar"></span>
+      <br>
+
+      <input type="checkbox" name="interesse[]" value="carros" id="chCar">
+      <label for="chCar">Carros</label>
+      <span class="validar"></span>
+      <br>
+
+      <input type="checkbox" name="interesse[]" value="mulheres" id="chMulher">
+      <label for="chMulher">Mulheres</label>
+      <span class="validar"></span>
+      <br><br>
+
+      <label for="">Cidade:</label>
+      <select class="" name="cidade">
+        <option value="">Selecione uma Cidade</option>
+        <option value="1">Alto Paraná</option>
+        <option value="2">Paranavaí</option>
+        <option value="3">Cianorte</option>
+        <option value="4">Paraiso do Norte</option>
+        <option value="5">Nova Londrina</option>
+      </select>
+      <span class="validar"></span>
+      <br><br>
+
+
+      <input type="submit" name="" value="Enviar">
+
+
+    </form>
+
+  </div>
+
+
+</body>
+</html>

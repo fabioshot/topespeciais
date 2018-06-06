@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JQuery para validação de formulário</title>
+    <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script>
+      $(document).ready(function() {
+
+        $('#buscar').click(function() {
+
+        var txt = $('#termo').val()
+
+        if(txt == ''){
+          $('#mensagem').text('Preencha um termo');
+          return;
+        }else{$('#mensagem').hide();}
+
+      
+        $('form').submit();
+
+        });
+      });
+    </script>
+
+    </script>
+  </head>
+  <body>
+    <h4>Consulta</h4>
+    <form action="" method="get">
+    <label for="">Pesquisar por:</label>
+    <input type="text" name="termo" value="" id="termo">
+    <button type="button" id="buscar">Buscar</button>
+    </form>
+    <div class="alerta" id="mensagem">
+
+    </div>
+  </body>
+</html>
