@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <title></title>
+</head>
+
+<script>
+$(document).ready(function() {
+
+
+  $("#calcular").click(function(event) {
+    var num1 = $("input[name='valor1']").val();
+    num1 = parseDouble(num1);
+
+    var num2 = $("input[name='valor2']").val();
+    num2 = parseDouble().val();
+
+    var op = $("input[name='operador']").val();
+    if
+    $("#resultado").val(num1 op num2;);
+  });
+
+
+});
+</script>
+
+<body>
+  <div class="">
+    <h1>Calculadora em JQuery</h1>
+  </div>
+  <br>
+  <div class="">
+    <form>
+      <div class="">
+        <label>Valor1: </label>
+        <input type="text" name="valor1" size="15" />
+      </div>
+      <br>
+      <div class="">
+        <input type="radio" name="operador" value="+">+<br>
+        <input type="radio" name="operador" value="-">-<br>
+        <input type="radio" name="operador" value="/">/<br>
+        <input type="radio" name="operador" value="*">*<br>
+      </div>
+      <br>
+      <div class="">
+        <label>Valor2: </label>
+        <input type="text" name="valor2" size="15" />
+      </div>
+      <br>
+      <div class="">
+        <button type="button" id="calcular">Calcular</button>
+        <br>
+        <br>
+        <p>Resultado: <span id="resultado"></span></p>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>
