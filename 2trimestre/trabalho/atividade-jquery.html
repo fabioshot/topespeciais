@@ -7,35 +7,42 @@
   <script>
 
   $(document).ready(function() {
-
+  //Exercicio 1 e 4
     $('#acao').click(function(event) {
       $("#acao").attr('src', './img/quebrada.jpg');
     });
 
-      $('#acao').mouseenter(function(event) {
-        if($('#acao').attr('src') != "./img/quebrada.jpg"){
-          $("#acao").attr('src', './img/acesa.jpg');
-        }
-      });
+    $('#acao').mouseenter(function(event) {
+      if($('#acao').attr('src') != "./img/quebrada.jpg"){
+        $("#acao").attr('src', './img/acesa.jpg');
+      }
+    });
 
-      $('#acao').mouseleave(function(event) {
-        if($('#acao').attr('src') != "./img/quebrada.jpg"){
-          $("#acao").attr('src', './img/apagada.jpg');
-        }
+    $('#acao').mouseleave(function(event) {
+      if($('#acao').attr('src') != "./img/quebrada.jpg"){
+        $("#acao").attr('src', './img/apagada.jpg');
+      }
 
+    });
+    // Exercicio 2
+
+
+    $('.pequenas img').click(function(event) {
+      var link = $(this).attr('src');
+      $('#grande').attr('src', link);
     });
 
   });
   </script>
   <style>
+
   #grande{
-     width : 600px;
-     height: : 400px;"
+    width : 600px;
+    height:  400px;
   }
-  .pequenas{
-    padding-left: 40px;
-    width: 100px;
-    height: 70px;
+  .pequenas img{
+    width: 115px;
+    height: 115px;
   }
 
   </style>
@@ -47,18 +54,23 @@
     <img id="acao" src="./img/apagada.jpg">
   </div>
 
-  <h1>Exercicio 2 JQuery</h1>
+  <h1>Exercicio 2 JQuery Galeria de Fotos</h1>
 
   <div>
-    <img id="grande" src="./img/galeria1.jpeg">
+    <img id="grande" src="./img/img1.jpeg">
   </div>
   <div class="pequenas">
-      <img src="./img/galeria1.jpeg">
-      <img src="./img/galeria2.jpeg">
-      <img src="./img/galeria3.jpeg">
-      <img src="./img/galeria4.jpeg">
+    <img src="./img/img1.jpeg">
+    <img src="./img/img2.jpeg">
+    <img src="./img/img3.jpeg">
+    <img src="./img/img4.jpeg">
+    <img src="./img/img5.jpeg">
   </div>
 
+  <h1>Exercicio 3 Fotos em destaque</h1>
+  <div class="destaque">
+    <img src="./img/img3.jpeg">
+  </div>
 
 </body>
 </html>
