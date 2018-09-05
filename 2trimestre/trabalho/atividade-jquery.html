@@ -32,8 +32,22 @@
       $('#grande').attr('src', link);
     });
 
+    // Exercicio 3
+    var imagens = ["./img/img1.jpeg","./img/img2.jpeg","./img/img3.jpeg",
+    "./img/img4.jpeg","./img/img5.jpeg"];
+
+    $('#anterior').click(function(event) {
+      var valor = 
+    });
+
+    $('#proximo').click(function(event) {
+
+    });
+
+
   });
   </script>
+
   <style>
 
   #grande{
@@ -43,6 +57,11 @@
   .pequenas img{
     width: 115px;
     height: 115px;
+
+  }
+  .destaque img{
+    width : 600px;
+    height:  400px;
   }
 
   </style>
@@ -71,6 +90,10 @@
   <div class="destaque">
     <img src="./img/img3.jpeg">
   </div>
+  <form>
+    <input type="button" name="anterior" value="Anterior" id="anterior"/>
+    <input type="button" name="proximo" value="Proximo" id="proximo"/>
+  </form>
 
 </body>
 </html>
