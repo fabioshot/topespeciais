@@ -7,7 +7,7 @@
   <script>
 
   $(document).ready(function() {
-  //Exercicio 1 e 4
+    //Exercicio 1 e 4
     $('#acao').click(function(event) {
       $("#acao").attr('src', './img/quebrada.jpg');
     });
@@ -32,16 +32,28 @@
       $('#grande').attr('src', link);
     });
 
+
+
     // Exercicio 3
-    var imagens = ["./img/img1.jpeg","./img/img2.jpeg","./img/img3.jpeg",
-    "./img/img4.jpeg","./img/img5.jpeg"];
+    var imagens = ["img1","img2","img3","img4","img5"];
+    var posicao = 0;
 
     $('#anterior').click(function(event) {
-      var valor = 
+      posicao = Number(posicao)-1;
+      if(posicao <= -1)
+      {
+        posicao = imagens.length -1
+      }
+      $('#destaque').attr('src', './img/'+imagens[posicao]+'.jpeg');
     });
 
     $('#proximo').click(function(event) {
-
+      posicao = Number(posicao)+1;
+      if(posicao >= imagens.length)
+      {
+        posicao = 0;
+      }
+      $('#destaque').attr('src', './img/'+imagens[posicao]+'.jpeg');
     });
 
 
@@ -59,7 +71,7 @@
     height: 115px;
 
   }
-  .destaque img{
+  #destaque {
     width : 600px;
     height:  400px;
   }
@@ -87,8 +99,8 @@
   </div>
 
   <h1>Exercicio 3 Fotos em destaque</h1>
-  <div class="destaque">
-    <img src="./img/img3.jpeg">
+  <div>
+    <img id="destaque" src="./img/img3.jpeg">
   </div>
   <form>
     <input type="button" name="anterior" value="Anterior" id="anterior"/>

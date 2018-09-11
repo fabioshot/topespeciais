@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>curriculo</title>
+  <link rel="stylesheet" href="./bootstrap4/css/bootstrap.min.css">
+  <script src="./js/jquery-3.3.1.min.js" charset="utf-8"></script>
+  <script src="./bootstrap4/js/bootstrap.min.js"></script>
+
+
+  <style media="screen">
+  #pagina{
+    width: 1024px;
+    margin: 0px auto;
+  }
+  </style>
+
+</head>
+<body>
+
+  <div id="pagina">
+
+
+
+    <h1>Seu Curriculo!</h1>
+    <hr>
+    <br>
+
+    <div class="pessoais">
+      <h3>Informaçõs Pessoais</h3>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputNome">Nome: </label>
+            <input type="text" name="nome" class="form-control" id="inputNome">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputEndereco">Endereço:</label>
+            <input type="text" name="endereco" class="form-control" id="inputEndereco">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputNumero">Numero:</label>
+            <input type="text" name="numero" class="form-control" id="inputNumero">
+          </div>
+          <div class="form-group col-md-9">
+            <label for="inputBairro">Bairro:</label>
+            <input type="text" name="bairro" class="form-control" id="inputBairro">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputCidade">Cidade:</label>
+            <input type="text" name="cidade" class="form-control" id="inputCidade">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputEstado">Estado: </label>
+            <input type="text" name="estado" class="form-control" id="inputEstado">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCelular">Celular:</label>
+            <input type="text" name="celular" class="form-control" id="inputCelular">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-4">
+
+          </div>
+          <div class="form-group col-md-4">
+            <input type="button" name="proximo" value="proximo" class="form-control btn btn-primary">
+          </div>
+          <div class="form-group col-md-4">
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="formacao">
+
+      <h3>Formação Acadêmica</h3>
+
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="inputEnsino">Ensino:</label>
+            <select class="form-control" id="inputEnsino">
+              <option value="">Ensino Médio</option>
+              <option value="">Curso Superior</option>
+              <option value="">Curso Tecnico</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="inputInstituicao">Instituição de Ensino:</label>
+            <input type="text" name="ensino" class="form-control" id="inputInstituicao">
+          </div>
+
+          <div class="form-group col-md-3">
+            <label for="inputAno">Ano: </label>
+            <input type="text" name="ano" class="form-control" id="inputAno">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputDesc">Descrição: </label>
+            <textarea name="desc" rows="4" id="inputDesc" class="form-control"></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-2">
+
+          </div>
+          <div class="form-group col-md-4">
+            <input type="button" name="voltar" value="Voltar" class="form-control btn btn-light">
+          </div>
+          <div class="form-group col-md-4">
+            <input type="button" name="proximo" value="Proximo" class="form-control btn btn-primary">
+          </div>
+          <div class="form-group col-md-2">
+
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+      </form>
+
+    </div>
+
+    <div class="profissional">
+      <h2>Dados Profissionais</h2>
+      <form class="">
+
+        <label for="">Data Entrada:</label>
+        <input type="date" name="entrada">
+
+        <label for="">Data Saida:</label>
+        <input type="date" name="saida">
+
+        <label for="">Função:</label>
+        <input type="text" name="funcao">
+
+        label for="">Empresa:</label>
+        <input type="text" name="empresa">
+
+        <input type="button" name="voltar" value="Voltar">
+        <input type="button" name="proximo" value="Proximo">
+
+      </form>
+
+    </div>
+
+    <div class="usuario">
+      <h2>Defina seu Usuário</h2>
+      <form class="">
+
+        <label for="">Email:</label>
+        <input type="text" name="email">
+
+        <label for="">Senha:</label>
+        <input type="password" name="senha">
+
+        <label for="">Confirme Senha:</label>
+        <input type="password" name="csenha">
+
+        <input type="button" name="voltar" value="Voltar">
+        <input type="button" name="submeter" value="Submeter">
+
+      </form>
+
+    </div>
+  </div>
+</body>
+</html>
