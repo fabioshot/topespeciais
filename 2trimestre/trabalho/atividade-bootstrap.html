@@ -8,38 +8,147 @@
   <script src="./bootstrap4/js/bootstrap.min.js"></script>
 
 
-  <style media="screen">
+  <style>
   #pagina{
     width: 1024px;
     margin: 0px auto;
   }
+  .vermelho,span, #confirme{
+    color : red;
+  }
   </style>
+
+  <script>
+
+  $(document).ready(function() {
+
+    $("#formacao").hide();
+    $("#profis").hide();
+    $("#usuario").hide();
+
+    $(".botaoFormacao").click(function(event) {
+
+      var ok = true;
+
+      $("#dados .obrigatorio").each(function() {
+
+        if($(this).val() == ""){
+          $(this).next("span").text("Este campo é obrigatório!");
+          ok = false;
+        } else{
+          $(this).next("span").text("");
+        }
+      });
+      if(ok){
+        $("#formacao").show();
+        $("#dados").hide();
+        $("#profis").hide();
+        $("#usuario").hide();
+      }
+    });
+
+    $(".botaoProf").click(function(event) {
+
+
+      var ok = true;
+
+      $("#formacao .obrigatorio").each(function() {
+
+        if($(this).val() == ""){
+          $(this).next("span").text("Este campo é obrigatório!");
+          ok = false;
+        } else{
+          $(this).next("span").text("");
+        }
+      });
+
+      if(ok){
+
+        $("#profis").show();
+        $("#formacao").hide();
+        $("#dados").hide();
+        $("#usuario").hide();
+      }
+
+    });
+
+    $(".botaoUsuario").click(function(event) {
+      var ok = true;
+
+      $("#prof .obrigatorio").each(function() {
+
+        if($(this).val() == ""){
+          $(this).next("span").text("Este campo é obrigatório!");
+          ok = false;
+        } else{
+          $(this).next("span").text("");
+        }
+      });
+
+      if(ok){
+        $("#formacao").hide();
+        $("#dados").hide();
+        $("#profis").hide();
+        $("#usuario").show();
+        }
+
+    });
+
+    $(".botaoDados").click(function(event) {
+      $("#dados").show();
+      $("#formacao").hide();
+      $("#profis").hide();
+      $("#usuario").hide();
+      if($(".obrigatorio").val() != ""){
+        ("span").text("");
+      }
+    });
+
+    $("#submeter").click(function(event) {
+      if($(".obrigatorio").val() == ""){
+        $("span").text("Este campo é obrigatório!");
+        e.preventDefault();
+      }
+      else if($("#inputSenha").val() == $("#inputConfirme").val()){
+        $("h3").text("Curriculo cadastrado!")
+      }
+      else if($("#inputSenha").val() != $("#inputConfirme").val()){
+        $("#confirme").text("Curriculo cadastrado!")
+      }
+
+
+    });
+
+  });
+
+  </script>
 
 </head>
 <body>
 
   <div id="pagina">
 
-
-
     <h1>Seu Curriculo!</h1>
     <hr>
     <br>
 
-    <div class="pessoais">
-      <h3>Informaçõs Pessoais</h3>
+    <div id="dados">
+      <h3>Informações Pessoais</h3>
+      <p class="vermelho">* Campos obrigatórios</p>
       <form>
         <div class="form-row">
           <div class="form-group col-md-12">
             <label for="inputNome">Nome: </label>
-            <input type="text" name="nome" class="form-control" id="inputNome">
+            <input type="text" name="nome" class="form-control obrigatorio" id="inputNome">
+            <span></span>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-12">
             <label for="inputEndereco">Endereço:</label>
-            <input type="text" name="endereco" class="form-control" id="inputEndereco">
+            <input type="text" name="endereco" class="form-control obrigatorio" id="inputEndereco">
+            <span></span>
           </div>
         </div>
 
@@ -57,15 +166,18 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="inputCidade">Cidade:</label>
-            <input type="text" name="cidade" class="form-control" id="inputCidade">
+            <input type="text" name="cidade" class="form-control obrigatorio" id="inputCidade">
+            <span></span>
           </div>
           <div class="form-group col-md-4">
             <label for="inputEstado">Estado: </label>
-            <input type="text" name="estado" class="form-control" id="inputEstado">
+            <input type="text" name="estado" class="form-control obrigatorio" id="inputEstado">
+            <span></span>
           </div>
           <div class="form-group col-md-4">
             <label for="inputCelular">Celular:</label>
-            <input type="text" name="celular" class="form-control" id="inputCelular">
+            <input type="text" name="celular" class="form-control obrigatorio" id="inputCelular">
+            <span></span>
           </div>
         </div>
 
@@ -74,7 +186,7 @@
 
           </div>
           <div class="form-group col-md-4">
-            <input type="button" name="proximo" value="proximo" class="form-control btn btn-primary">
+            <input type="button" name="proximo" value="Proximo" class="form-control btn btn-primary botaoFormacao">
           </div>
           <div class="form-group col-md-4">
           </div>
@@ -84,15 +196,15 @@
 
     </div>
 
-    <div class="formacao">
+    <div id="formacao">
 
       <h3>Formação Acadêmica</h3>
-
+      <p class="vermelho">* Campos obrigatórios</p>
       <form>
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="inputEnsino">Ensino:</label>
-            <select class="form-control" id="inputEnsino">
+            <select class="form-control obrigatorio" id="inputEnsino">
               <option value="">Ensino Médio</option>
               <option value="">Curso Superior</option>
               <option value="">Curso Tecnico</option>
@@ -101,19 +213,21 @@
 
           <div class="form-group col-md-6">
             <label for="inputInstituicao">Instituição de Ensino:</label>
-            <input type="text" name="ensino" class="form-control" id="inputInstituicao">
+            <input type="text" name="ensino" class="form-control obrigatorio" id="inputInstituicao">
+            <span></span>
           </div>
 
           <div class="form-group col-md-3">
             <label for="inputAno">Ano: </label>
-            <input type="text" name="ano" class="form-control" id="inputAno">
+            <input type="text" name="ano" class="form-control obrigatorio" id="inputAno">
+            <span></span>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md-12">
             <label for="inputDesc">Descrição: </label>
-            <textarea name="desc" rows="4" id="inputDesc" class="form-control"></textarea>
+            <textarea name="desc" rows="4" id="inputDesc" class="form-control obrigatorio"></textarea>
           </div>
         </div>
 
@@ -122,70 +236,109 @@
 
           </div>
           <div class="form-group col-md-4">
-            <input type="button" name="voltar" value="Voltar" class="form-control btn btn-light">
+            <input type="button" name="voltar" value="Voltar" class="form-control btn btn-light botaoDados">
           </div>
           <div class="form-group col-md-4">
-            <input type="button" name="proximo" value="Proximo" class="form-control btn btn-primary">
+            <input type="button" name="proximo" value="Proximo" class="form-control btn btn-primary botaoProf">
           </div>
           <div class="form-group col-md-2">
 
           </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
       </form>
 
     </div>
 
-    <div class="profissional">
-      <h2>Dados Profissionais</h2>
-      <form class="">
+    <div id="profis">
+      <h3>Dados Profissionais</h3>
+      <p class="vermelho">* Campos obrigatórios</p>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputEntrada">Data Entrada:</label>
+            <input type="date" name="entrada" id="inputEntrada" class="form-control obrigatorio">
+            <span></span>
+          </div>
 
-        <label for="">Data Entrada:</label>
-        <input type="date" name="entrada">
+          <div class="form-group col-md-4">
+            <label for="inputSaida">Data Saida:</label>
+            <input type="date" name="saida" class="form-control" id="inputSaida">
+          </div>
 
-        <label for="">Data Saida:</label>
-        <input type="date" name="saida">
+          <div class="form-group col-md-4">
+            <label for="inputfuncao">Função:</label>
+            <input type="text" name="funcao" id="inputfuncao" class="form-control obrigatorio">
+            <span></span>
+          </div>
+        </div>
 
-        <label for="">Função:</label>
-        <input type="text" name="funcao">
-
-        label for="">Empresa:</label>
-        <input type="text" name="empresa">
-
-        <input type="button" name="voltar" value="Voltar">
-        <input type="button" name="proximo" value="Proximo">
-
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="inputEmpresa">Empresa:</label>
+            <input type="text" name="empresa" class="form-control obrigatorio" id="inputEmpresa">
+            <span></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-2"></div>
+          <div class="form-group col-md-4">
+            <input type="button" name="voltar" value="Voltar" class="form-control btn btn-light botaoFormacao">
+          </div>
+          <div class="form-group col-md-4">
+            <input type="button" name="proximo" value="Proximo" class="form-control btn btn-primary botaoUsuario">
+          </div>
+          <div class="form-group col-md-2"></div>
+        </div>
       </form>
 
     </div>
 
-    <div class="usuario">
-      <h2>Defina seu Usuário</h2>
-      <form class="">
+    <div id="usuario">
+      <h3>Defina seu Usuário</h3>
+      <p class="vermelho">* Campos obrigatórios</p>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-4"></div>
+          <div class="form-group col-md-4">
+            <label for="inputEmail">Email:</label>
+            <input type="text" name="email" class="form-control obrigatorio" id="inputEmail">
+            <span></span>
+          </div>
+          <div class="form-group col-md-4"></div>
+        </div>
 
-        <label for="">Email:</label>
-        <input type="text" name="email">
+        <div class="form-row">
+          <div class="form-group col-md-4"></div>
+          <div class="form-group col-md-4">
+            <label for="inputSenha">Senha:</label>
+            <input type="password" name="senha" class="form-control obrigatorio" id="inputSenha">
+            <span></span>
+          </div>
+          <div class="form-group col-md-4"></div>
+        </div>
 
-        <label for="">Senha:</label>
-        <input type="password" name="senha">
-
-        <label for="">Confirme Senha:</label>
-        <input type="password" name="csenha">
-
-        <input type="button" name="voltar" value="Voltar">
-        <input type="button" name="submeter" value="Submeter">
-
+        <div class="form-row">
+          <div class="form-group col-md-4"></div>
+          <div class="form-group col-md-4">
+            <label for="inputConfirme">Confirme Senha:</label>
+            <input type="password" name="csenha" id="inputConfirme" class="form-control obrigatorio">
+            <span id="confirme"></span>
+          </div>
+          <div class="form-group col-md-4"></div>
+        </div>
+        <br>
+        <br>
+        <div class="form-row">
+          <div class="form-group col-md-2"></div>
+          <div class="form-group col-md-4">
+            <input type="button" name="voltar" value="Voltar" class="form-control btn btn-light botaoProf">
+          </div>
+          <div class="form-group col-md-4">
+            <input type="button" name="submeter" value="Submeter" class="form-control btn btn-primary" id="submeter">
+          </div>
+          <div class="form-group col-md-2"></div>
+          <h3></h3>
+        </div>
       </form>
 
     </div>
