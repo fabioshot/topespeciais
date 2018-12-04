@@ -25,9 +25,12 @@ class Index(TemplateView):
 
 
 # Página de ajuda
-class Ajuda(TemplateView):
+class Sobre(TemplateView):
     # Define qual o arquivo HTML vai ser usado para exibir esta página
-    template_name = "ajuda.html" # deve estar na pasta templates
+    template_name = "sobre.html" # deve estar na pasta templates
+
+class Menu(TemplateView):
+    template_name = "menu.html"
 
 
 class CidadeCreate(CreateView):
@@ -55,21 +58,48 @@ class CidadeList(ListView):
     template_name = 'cidade_list.html'
 
 
-class PessoaCreate(CreateView):
-    model = Pessoa
+
+class TipoCreate(CreateView):
+    model = Tipo
     success_url = reverse_lazy('index')
     template_name = 'forms.html'
-    fields= ['nome', 'email', 'nascimento', 'cidade']
+    fields= ['descricao']
 
 
-class PessoaUpdate(UpdateView):
-    model = Pessoa
-    success_url = reverse_lazy('index')
-    template_name = 'forms.html'
-    fields= ['nome', 'email', 'nascimento', 'cidade']
 
-
-class PessoaDelete(DeleteView):
-    model = Pessoa
+class TipoDelete(DeleteView):
+    model = Tipo
     success_url = reverse_lazy('index')
     template_name = 'forms_delete.html'
+
+
+class TipoUpdate(UpdateView):
+    model = Tipo
+    success_url = reverse_lazy('index')
+    template_name = 'forms.html'
+    fields= ['descricao']
+
+
+class AnimaisCreate(CreateView):
+    model = Animais
+    success_url = reverse_lazy('index')
+    template_name = 'forms.html'
+    fields= ['doador', 'email', 'telefone', 'nascimento', 'cidade', 'tipo', 'raca', 'apelido', 'vacinas']
+
+
+class AnimaisUpdate(UpdateView):
+    model = Animais
+    success_url = reverse_lazy('index')
+    template_name = 'forms.html'
+    fields= ['doador', 'email', 'telefone', 'nascimento', 'cidade', 'tipo', 'raca', 'apelido', 'vacinas']
+
+
+class AnimaisDelete(DeleteView):
+    model = Animais
+    success_url = reverse_lazy('index')
+    template_name = 'forms_delete.html'
+
+
+class AnimaisList(ListView):
+    model = Animais
+    template_name = 'animais_list.html'

@@ -1,0 +1,60 @@
+{% extends 'modelo.html' %}
+{% load static %}
+
+{% block conteudo %}
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+    <div class="col-sm-4 my-4">
+      <div class="card">
+        <img class="card-img-top" src="{% static 'img/cao-gato.jpg' %}" alt="">
+        <div class="card-body">
+          <h4 class="card-title cinza">Se cidade não estiver cadastrada!</h4>
+        </div> 
+        <div class="card-footer">
+          <br>
+          <p class="text-center">
+              <a class="btn btn-success btn-lg" href="{% url 'inserir-cidade' %}">Cadastrar Cidade &raquo;</a>
+          </p>
+        </div>               
+      </div>
+    </div>
+    <div class="col-sm-4 my-4">
+      <div class="card">
+        <img class="card-img-top" src="{% static 'img/caofeliz.jpg' %}" alt="">
+        <div class="card-body">
+         
+          <h4 class="card-title cinza">Se o tipo de animal não estiver listada terá que cadastrar</h4>                  
+        </div> 
+        <div class="card-footer">
+          <br>
+          <p class="text-center">
+              <a class="btn btn-info btn-lg" href="{% url 'menu' %}">Cadastro do Tipo do Animal &raquo;</a>
+          </p>
+        </div>              
+      </div>
+    </div>
+    <div class="col-sm-4 my-4">
+      <div class="card">
+        <img class="card-img-top" src="{% static 'img/abandono.jpg' %}" alt="">
+        <div class="card-body">
+          <h4 class="card-title cinza">Cadastre seu animal para Doação</h4>                  
+        </div>
+        <div class="card-footer">
+          <br>
+          <p class="text-center">
+            <a class="btn btn-primary btn-lg" href="{% url 'inserir-animais' %}">Cadastrar animais &raquo;</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
+{% endblock %}

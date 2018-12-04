@@ -13,11 +13,30 @@ class Cidade(models.Model):
         #Paranavaí (PR)
         return self.nome + '('+ self.estado + ')'
 
-class Pessoa(models.Model):
-    nome = models.CharField(max_length=50, help_text = 'nome completo')
+
+
+class Tipo(models.Model):
+    descricao = models.CharField(max_length=50, help_text = 'Tipo do Aminal')
+
+    def __str__(self):
+        return self.descricao
+
+
+
+
+class Animais(models.Model):
+    doador = models.CharField(max_length=50, help_text = 'nome completo')
     email = models.CharField(max_length= 50)
+    telefone = models.CharField(max_length= 15)
     nascimento = models.DateField('Data de nascimento')
     cidade = models.ForeignKey(Cidade, on_delete=models.CASCADE)
+    tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)
+    raca = models.CharField(max_length= 50)
+    apelido = models.CharField(max_length= 50)
+    vacinas = models.BooleanField() 
 
     def __str__(self):
         return self.nome + ' - ' + str(self.nascimento)
+
+
+

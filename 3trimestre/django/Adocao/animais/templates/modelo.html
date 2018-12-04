@@ -35,7 +35,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{% url 'index' %}">
         <i class="fa fa-heart-o" aria-hidden="true"></i>
         <i class="fa fa-heart-o" aria-hidden="true"></i>
         Animais Carinhosos
@@ -48,25 +48,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">
               <i class="fa fa-home" aria-hidden="true"></i>
               Inicio
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{% url 'listar-animais' %}">
               <i class="fa fa-search" aria-hidden="true"></i>
               Animais</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <i class="fa fa-comment-o" aria-hidden="true"></i>
-                contatos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{% url 'sobre' %}">
                   <i class="fa fa-align-left" aria-hidden="true"></i>
                   Sobre</a>
                 </li>
@@ -94,67 +89,46 @@
         <div class="container">
 
           <div class="row">
-            <div class="col-sm-8">
-              <h2 class="mt-4">What We Do</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-              <p>
-                <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+            <div class="col-sm-3">
+              
+            </div>
+            <div class="col-sm-6">
+              <h2 class="mt-4 text-center">Não Abandone seu animal!</h2>
+              <p>Muitos animais são abandonados na rua, onde são submetidos a varias situações, e podem não aguentar e morrer por causa de maustratos.</p>
+              <p>O pessoal dos <b>Animais Carinhosos</b> querem arrumar um novo lar para esses animais antes de serem abandonados.</p>
+              <p class="text-center">
+                <a class="btn btn-primary btn-lg" href="{% url 'menu' %}">Faça o Cadastro Aqui! &raquo;</a>
               </p>
             </div>
-            <div class="col-sm-4">
-              <h2 class="mt-4">Contact Us</h2>
-              <address>
-                <strong>Start Bootstrap</strong>
-                <br>3481 Melrose Place
-                <br>Beverly Hills, CA 90210
-                <br>
-              </address>
-              <address>
-                <abbr title="Phone">P:</abbr>
-                (123) 456-7890
-                <br>
-                <abbr title="Email">E:</abbr>
-                <a href="mailto:#">name@example.com</a>
-              </address>
+            <div class="col-sm-3">
+              
             </div>
           </div>
           <!-- /.row -->
 
+        
           <div class="row">
             <div class="col-sm-4 my-4">
               <div class="card">
-                <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+                <img class="card-img-top" src="{% static 'img/cao-gato.jpg' %}" alt="">
                 <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
+                  <h4 class="card-title cinza">Cuidar faz bem</h4>
+                </div>                
               </div>
             </div>
             <div class="col-sm-4 my-4">
               <div class="card">
-                <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+                <img class="card-img-top" src="{% static 'img/caofeliz.jpg' %}" alt="">
                 <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Find Out More!</a>
-                </div>
+                  <h4 class="card-title cinza">Faça um animal feliz</h4>                  
+                </div>               
               </div>
             </div>
             <div class="col-sm-4 my-4">
               <div class="card">
-                <img class="card-img-top" src="http://placehold.it/300x200" alt="">
+                <img class="card-img-top" src="{% static 'img/abandono.jpg' %}" alt="">
                 <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-                </div>
-                <div class="card-footer">
-                  <a href="#" class="btn btn-primary">Find Out More!</a>
+                  <h4 class="card-title cinza">Não deixe um animal abandonado</h4>                  
                 </div>
               </div>
             </div>
@@ -172,7 +146,7 @@
         <!-- Footer -->
         <footer class="py-5 bg-dark">
           <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Animais Carinhosos 2018.</p>
           </div>
           <!-- /.container -->
         </footer>

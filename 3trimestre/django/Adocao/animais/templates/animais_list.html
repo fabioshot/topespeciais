@@ -1,0 +1,53 @@
+{% extends 'modelo.html' %}
+
+{% load bootstrap4 %}
+
+{% block conteudo %}
+
+<div class="container">
+
+  <div class="row mt-5">
+
+    <div class="col-sm p-3 mt-4">
+
+      <h2>Lista de Animais</h2>
+
+      <table class="table table-striped">
+
+        <tr>
+          <th>Doador</th>
+          <th>Tipo</th>
+          <th>Raça</th>
+          <th>Cidade</th>
+          <th>Opções</th>
+        </tr>
+
+        {% for animais in object_list %}
+
+        <tr>
+          <td>{{animais.doador}}</td>
+          <td>{{animais.tipo}}</td>
+          <td>{{animais.raca}}</td>
+          <td>{{animais.cidade}}</td>
+          <td>
+            <a class="btn btn-primary " href="{% url 'editar-animais' animais.id %}">Alterar &raquo;</a>
+            <a class="btn btn-danger " href="{% url 'excluir-animais' animais.id %}">Excluir &raquo;</a> 
+            
+          </td>
+        </tr>
+
+        {% empty %}
+        <tr>
+          <td colspan="3">Nenhuma cidade cadastrada!</td>
+        </tr>
+        {% endfor %}
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
